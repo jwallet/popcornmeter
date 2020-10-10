@@ -1,0 +1,31 @@
+{
+  "name": "Popcorn Meter",
+  "author": "ymdevs",
+  "version": "1.0.0",
+  "description": "A web browser extension that shows audience/public rates everywhere on rotten tomateos. Runs on Chrome and Firefox.",
+  "icons": {
+    "128": "assets/icon-128.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": ["activeTab", "storage", "https://www.rottentomatoes.com/*"],
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Popcorn Meter",
+    "default_icon": "assets/icon-48.png",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "js": ["main.js"],
+      "matches": ["https://www.rottentomatoes.com/*"]
+    }
+  ]
+}
