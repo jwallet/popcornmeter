@@ -1,0 +1,11 @@
+export type MEDIA_TYPE = "SERIE" | "MOVIE";
+
+export const MEDIA_TYPES_ENUM: { SERIE: MEDIA_TYPE; MOVIE: MEDIA_TYPE } = {
+  SERIE: "SERIE",
+  MOVIE: "MOVIE",
+};
+
+export const MEDIA_TYPES_URL_PART_ENUM = {
+  [MEDIA_TYPES_ENUM.MOVIE]: "/m/",
+  [MEDIA_TYPES_ENUM.SERIE]: "/tv/",
+};

@@ -1,8 +1,7 @@
 import { combineReducers } from "redux";
-import movieRates, { IMovieRates } from "./movies/reducer";
-import settings, { IAppSettings } from "./settings/reducer";
+import rates, { IRatesState } from "./rates/reducer";
+import settings, { IAppSettingsState } from "./settings/reducer";
 
-import "redux";
 // Enhance the Action interface with the option of a payload.
 // While still importing the Action interface from redux.
 declare module "redux" {
@@ -16,8 +15,8 @@ type OnSuccess = () => void;
 type OnError = (e: Error) => void;
 
 export interface IState {
-  settings: IAppSettings;
-  movieRates: IMovieRates;
+  settings: IAppSettingsState;
+  rates: IRatesState;
 }
 
 const APP_STATE = "popcorn_meter_state";
@@ -49,7 +48,7 @@ export const saveState = (
 };
 
 const reducers = combineReducers<IState>({
-  movieRates,
+  rates,
   settings,
 });
 

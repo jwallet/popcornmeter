@@ -59,6 +59,10 @@ module.exports = {
         loader: "awesome-typescript-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
+      },
     ],
   },
   plugins: [
