@@ -21,7 +21,7 @@ const extensionReloader =
         reloadPage: true,
         entries: {
           background: "background",
-          extensionPage: ["popup", "options"],
+          // extensionPage: ["popup", "options"],
           contentScript: Object.keys(contentScripts),
         },
       })
@@ -40,8 +40,8 @@ module.exports = {
   watch: nodeEnv === "watch",
   entry: {
     background: path.join(sourceRootPath, "ts", "background", "index.ts"),
-    options: path.join(sourceRootPath, "ts", "options", "index.tsx"),
-    popup: path.join(sourceRootPath, "ts", "popup", "index.tsx"),
+    // options: path.join(sourceRootPath, "ts", "options", "index.tsx"),
+    // popup: path.join(sourceRootPath, "ts", "popup", "index.tsx"),
     ...contentScripts,
   },
   output: {
@@ -66,20 +66,20 @@ module.exports = {
   },
   plugins: [
     new CheckerPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.join(sourceRootPath, "html", "options.html"),
-      inject: "body",
-      filename: "options.html",
-      title: "Popcorn Meter - Options",
-      chunks: ["options"],
-    }),
-    new HtmlWebpackPlugin({
-      template: path.join(sourceRootPath, "html", "popup.html"),
-      inject: "body",
-      filename: "popup.html",
-      title: "Popcorn Meter - Popup",
-      chunks: ["popup"],
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: path.join(sourceRootPath, "html", "options.html"),
+    //   inject: "body",
+    //   filename: "options.html",
+    //   title: "Popcorn Meter - Options",
+    //   chunks: ["options"],
+    // }),
+    // new HtmlWebpackPlugin({
+    //   template: path.join(sourceRootPath, "html", "popup.html"),
+    //   inject: "body",
+    //   filename: "popup.html",
+    //   title: "Popcorn Meter - Popup",
+    //   chunks: ["popup"],
+    // }),
     new CopyWebpackPlugin([
       {
         from: path.join(sourceRootPath, "assets"),
