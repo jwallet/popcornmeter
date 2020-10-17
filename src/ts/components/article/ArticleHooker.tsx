@@ -23,15 +23,22 @@ const ArticleHooker = (props: IProps) => {
   );
   return (
     <>
-      {elements.map((el) =>
-        ReactDOM.createPortal(
-          <AudienceRate
-            link={parseElementHref(el, props.is)}
-            styledComponent={StyledAudienceRate}
-          />,
-          el.parentElement?.closest(".tMeterScore") || el.parentElement || el
-        )
-      )}
+      {elements.map((el) => {
+        const target =
+          el.parentElement?.querySelector(".tMeterScore") ||
+          el.parentElement?.querySelector(".score") ||
+          el.parentElement?.querySelector(".icon.tiny");
+        return (
+          target &&
+          ReactDOM.createPortal(
+            <AudienceRate
+              link={parseElementHref(el, props.is)}
+              styledComponent={StyledAudienceRate}
+            />,
+            target
+          )
+        );
+      })}
     </>
   );
 };
@@ -40,6 +47,7 @@ const StyledAudienceRate = styled.span`
   display: inline-flex;
   text-align: center;
   margin-left: 5px;
+  color: #444;
   font-family: "Franklin Gothic Medium" !important;
   background-color: ${(p) => p.theme.backgroundColor};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
