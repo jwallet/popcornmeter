@@ -1,7 +1,12 @@
 {
   "name": "popcorn-meter",
   "version": "1.0.0",
-  "description": "A web browser extension that shows audience/public rates everywhere on rotten tomateos. Runs on Chrome and Firefox.",
+  "author": {
+    "name": "jwallet",
+    "email": "wizik20@gmail.com",
+    "url": "https://wwww.github.com/jwallet"
+  },
+  "description": "A web browser extension that display audience rates for series and movies listing on rottentomatoes.com. Runs on Chrome and Firefox.",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack -d",
@@ -17,6 +22,7 @@
   "dependencies": {
     "axios": "^0.20.0",
     "lodash.get": "^4.4.2",
+    "lodash.keyby": "^4.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -25,9 +31,11 @@
     "webext-redux": "^2.1.6"
   },
   "devDependencies": {
+    "@svgr/webpack": "^5.4.0",
     "@types/chrome": "^0.0.104",
-    "@types/jest": "^25.2.1",
+    "@types/jest": "^26.0.14",
     "@types/lodash.get": "^4.4.6",
+    "@types/lodash.keyby": "^4.6.6",
     "@types/node": "^13.13.2",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
