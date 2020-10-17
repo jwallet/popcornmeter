@@ -1,8 +1,6 @@
 ### Project specifics ###
-dist/
-node_modules/
-
-
+**/dist/**
+**/node_modules/**
 
 # Created by https://www.gitignore.io/api/node,macos,linux,eclipse,windows,intellij,visualstudio,microsoftoffice,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=node,macos,linux,eclipse,windows,intellij,visualstudio,microsoftoffice,visualstudiocode
